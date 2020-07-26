@@ -79,16 +79,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Blf-hw-9Va">
-                                <rect key="frame" x="20" y="108" width="374" height="514"/>
+                                <rect key="frame" x="20" y="108" width="374" height="530"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your meal name!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bef-pM-pbI">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên món!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bef-pM-pbI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="csq-qI-zRo">
-                                        <rect key="frame" x="0.0" y="38" width="374" height="374"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="csq-qI-zRo">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="374"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="csq-qI-zRo" secondAttribute="height" multiplier="1:1" id="kqw-EP-lBN"/>
@@ -97,22 +97,18 @@
                                             <outletCollection property="gestureRecognizers" destination="c3e-XB-2EO" appends="YES" id="L2v-4q-JX9"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-Ql-nft" customClass="RatingControl" customModule="QuanLyCafe" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="420" width="252" height="50"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZy-yN-oBt">
-                                        <rect key="frame" x="120" y="478" width="134" height="36"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập giá món" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QO7-pX-A7A">
+                                        <rect key="frame" x="116" y="462" width="142" height="30"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Input your meal"/>
-                                        <connections>
-                                            <action selector="gotoMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XbU-WA-x7v"/>
-                                        </connections>
-                                    </button>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Loại món" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5l-o1-EXW">
+                                        <rect key="frame" x="137" y="500" width="100.33333333333331" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="yeA-kV-AoM" firstAttribute="trailing" secondItem="csq-qI-zRo" secondAttribute="trailing" id="5No-UK-Sei"/>
@@ -122,11 +118,16 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="yeA-kV-AoM"/>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ru3-aQ-OiY">
+                                <rect key="frame" x="20" y="686" width="374" height="176"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Blf-hw-9Va" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0er-IV-Wwn"/>
+                            <constraint firstItem="ru3-aQ-OiY" firstAttribute="top" secondItem="Blf-hw-9Va" secondAttribute="bottom" constant="8" symbolic="YES" id="7l5-eb-Uv4"/>
                             <constraint firstItem="Blf-hw-9Va" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="C7h-hd-Ji9"/>
+                            <constraint firstItem="ru3-aQ-OiY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PLe-BZ-ol1"/>
                             <constraint firstItem="Blf-hw-9Va" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ybf-GW-3XC"/>
                             <constraint firstItem="Blf-hw-9Va" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c87-Jd-2cp"/>
                             <constraint firstItem="Blf-hw-9Va" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pWi-qf-zR7"/>
@@ -149,7 +150,6 @@
                     <connections>
                         <outlet property="edtMealName" destination="bef-pM-pbI" id="zsy-n3-UWw"/>
                         <outlet property="mealImage" destination="csq-qI-zRo" id="5gb-1q-6tW"/>
-                        <outlet property="mealRatingControl" destination="gOr-Ql-nft" id="cWC-oY-YU3"/>
                         <outlet property="saveButton" destination="Dsd-cr-OQo" id="iIn-BP-Sxf"/>
                     </connections>
                 </viewController>
@@ -161,7 +161,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4697" y="-447"/>
+            <point key="canvasLocation" x="-4697.1014492753629" y="-447.32142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oqi-lD-8CZ">
