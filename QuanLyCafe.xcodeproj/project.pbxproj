@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3146240E24DCFD43006A6EBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3146240D24DCFD42006A6EBA /* GoogleService-Info.plist */; };
+		31EB323B24DD6E6E00C07A83 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EB323A24DD6E6E00C07A83 /* libsqlite3.tbd */; };
+		31EB323D24DD6EF000C07A83 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB323C24DD6EF000C07A83 /* DatabaseAccess.swift */; };
 		65FEBBE224C9E2E500795D13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBE124C9E2E500795D13 /* AppDelegate.swift */; };
 		65FEBBE424C9E2E500795D13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBE324C9E2E500795D13 /* ViewController.swift */; };
 		65FEBBE724C9E2E500795D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FEBBE524C9E2E500795D13 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3146240D24DCFD42006A6EBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31EB323A24DD6E6E00C07A83 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		31EB323C24DD6EF000C07A83 /* DatabaseAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
 		65FEBBDE24C9E2E500795D13 /* QuanLyCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FEBBE124C9E2E500795D13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65FEBBE324C9E2E500795D13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31EB323B24DD6E6E00C07A83 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +63,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31EB323824DD6D8C00C07A83 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				31EB323C24DD6EF000C07A83 /* DatabaseAccess.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		31EB323924DD6E6E00C07A83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31EB323A24DD6E6E00C07A83 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		65FEBBD524C9E2E500795D13 = {
 			isa = PBXGroup;
 			children = (
 				65FEBBE024C9E2E500795D13 /* QuanLyCafe */,
 				65FEBBF524C9E2EE00795D13 /* QuanLyCafeTests */,
 				65FEBBDF24C9E2E500795D13 /* Products */,
+				31EB323924DD6E6E00C07A83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +101,13 @@
 		65FEBBE024C9E2E500795D13 /* QuanLyCafe */ = {
 			isa = PBXGroup;
 			children = (
+				31EB323824DD6D8C00C07A83 /* DAO */,
 				65FEBBE124C9E2E500795D13 /* AppDelegate.swift */,
 				65FEBBE324C9E2E500795D13 /* ViewController.swift */,
 				65FEBBE524C9E2E500795D13 /* Main.storyboard */,
 				65FEBBE824C9E2ED00795D13 /* Assets.xcassets */,
 				65FEBBEA24C9E2EE00795D13 /* LaunchScreen.storyboard */,
+				3146240D24DCFD42006A6EBA /* GoogleService-Info.plist */,
 				65FEBBED24C9E2EE00795D13 /* Info.plist */,
 			);
 			path = QuanLyCafe;
@@ -178,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FEBBEC24C9E2EE00795D13 /* LaunchScreen.storyboard in Resources */,
+				3146240E24DCFD43006A6EBA /* GoogleService-Info.plist in Resources */,
 				65FEBBE924C9E2ED00795D13 /* Assets.xcassets in Resources */,
 				65FEBBE724C9E2E500795D13 /* Main.storyboard in Resources */,
 			);
@@ -199,6 +226,7 @@
 			files = (
 				65FEBBE424C9E2E500795D13 /* ViewController.swift in Sources */,
 				65FEBBE224C9E2E500795D13 /* AppDelegate.swift in Sources */,
+				31EB323D24DD6EF000C07A83 /* DatabaseAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
