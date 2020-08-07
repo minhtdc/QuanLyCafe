@@ -7,10 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6552CC6124D7043F0006A7B9 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552CC6024D7043F0006A7B9 /* Food.swift */; };
+		6559CEBA24D96CA300FC9E0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */; };
+		65782C0224D93B870088A213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65782C0124D93B870088A213 /* Assets.xcassets */; };
+		6596EFF224DA488900BE0E15 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6596EFF124DA488900BE0E15 /* libsqlite3.0.tbd */; };
+		6596EFFF24DA48F600BE0E15 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596EFF424DA48F600BE0E15 /* FMDatabaseQueue.m */; };
+		6596F00024DA48F600BE0E15 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFF524DA48F600BE0E15 /* FMResultSet.h */; };
+		6596F00124DA48F600BE0E15 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFF624DA48F600BE0E15 /* FMDatabaseAdditions.h */; };
+		6596F00224DA48F600BE0E15 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFF724DA48F600BE0E15 /* FMDB.h */; };
+		6596F00324DA48F600BE0E15 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFF824DA48F600BE0E15 /* FMDatabase.h */; };
+		6596F00424DA48F600BE0E15 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFF924DA48F600BE0E15 /* FMDatabasePool.h */; };
+		6596F00524DA48F600BE0E15 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596EFFA24DA48F600BE0E15 /* FMDatabase.m */; };
+		6596F00624DA48F600BE0E15 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596EFFB24DA48F600BE0E15 /* FMDatabasePool.m */; };
+		6596F00724DA48F600BE0E15 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596EFFC24DA48F600BE0E15 /* FMResultSet.m */; };
+		6596F00824DA48F600BE0E15 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6596EFFD24DA48F600BE0E15 /* FMDatabaseAdditions.m */; };
+		6596F00924DA48F600BE0E15 /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6596EFFE24DA48F600BE0E15 /* FMDatabaseQueue.h */; };
+		6596F00C24DA495D00BE0E15 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596F00B24DA495D00BE0E15 /* DatabaseAccess.swift */; };
+		65CCCB5024D926AF00A15A6E /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCCB4F24D926AE00A15A6E /* FoodTableViewController.swift */; };
+		65CCCB5224D92A9F00A15A6E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCCB5124D92A9F00A15A6E /* FoodTableViewCell.swift */; };
 		65FEBBE224C9E2E500795D13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBE124C9E2E500795D13 /* AppDelegate.swift */; };
-		65FEBBE424C9E2E500795D13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBE324C9E2E500795D13 /* ViewController.swift */; };
+		65FEBBE424C9E2E500795D13 /* FoodDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBE324C9E2E500795D13 /* FoodDetailController.swift */; };
 		65FEBBE724C9E2E500795D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FEBBE524C9E2E500795D13 /* Main.storyboard */; };
-		65FEBBE924C9E2ED00795D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FEBBE824C9E2ED00795D13 /* Assets.xcassets */; };
 		65FEBBEC24C9E2EE00795D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FEBBEA24C9E2EE00795D13 /* LaunchScreen.storyboard */; };
 		65FEBBF724C9E2EE00795D13 /* QuanLyCafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEBBF624C9E2EE00795D13 /* QuanLyCafeTests.swift */; };
 /* End PBXBuildFile section */
@@ -26,11 +43,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6552CC6024D7043F0006A7B9 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65782C0124D93B870088A213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		6596EFD724DA45B400BE0E15 /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../fmdb/src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		6596EFD824DA45B400BE0E15 /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = ../fmdb/src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		6596EFD924DA45B400BE0E15 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = ../fmdb/src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		6596EFDA24DA45B400BE0E15 /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../fmdb/src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		6596EFDB24DA45B400BE0E15 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = ../fmdb/src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		6596EFDC24DA45B400BE0E15 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../fmdb/src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		6596EFDD24DA45B400BE0E15 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../fmdb/src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		6596EFDE24DA45B400BE0E15 /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = ../fmdb/src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		6596EFE724DA45CC00BE0E15 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = ../fmdb/src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		6596EFE824DA45CC00BE0E15 /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../fmdb/src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		6596EFEB24DA45E000BE0E15 /* FMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = ../fmdb/src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		6596EFED24DA480000BE0E15 /* fmdb */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fmdb; path = ../fmdb; sourceTree = "<group>"; };
+		6596EFF124DA488900BE0E15 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6596EFF324DA48F500BE0E15 /* QuanLyCafe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuanLyCafe-Bridging-Header.h"; sourceTree = "<group>"; };
+		6596EFF424DA48F600BE0E15 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = "../../../fmdb 2/src/fmdb/FMDatabaseQueue.m"; sourceTree = "<group>"; };
+		6596EFF524DA48F600BE0E15 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "../../../fmdb 2/src/fmdb/FMResultSet.h"; sourceTree = "<group>"; };
+		6596EFF624DA48F600BE0E15 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = "../../../fmdb 2/src/fmdb/FMDatabaseAdditions.h"; sourceTree = "<group>"; };
+		6596EFF724DA48F600BE0E15 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = "../../../fmdb 2/src/fmdb/FMDB.h"; sourceTree = "<group>"; };
+		6596EFF824DA48F600BE0E15 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "../../../fmdb 2/src/fmdb/FMDatabase.h"; sourceTree = "<group>"; };
+		6596EFF924DA48F600BE0E15 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = "../../../fmdb 2/src/fmdb/FMDatabasePool.h"; sourceTree = "<group>"; };
+		6596EFFA24DA48F600BE0E15 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = "../../../fmdb 2/src/fmdb/FMDatabase.m"; sourceTree = "<group>"; };
+		6596EFFB24DA48F600BE0E15 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = "../../../fmdb 2/src/fmdb/FMDatabasePool.m"; sourceTree = "<group>"; };
+		6596EFFC24DA48F600BE0E15 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "../../../fmdb 2/src/fmdb/FMResultSet.m"; sourceTree = "<group>"; };
+		6596EFFD24DA48F600BE0E15 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = "../../../fmdb 2/src/fmdb/FMDatabaseAdditions.m"; sourceTree = "<group>"; };
+		6596EFFE24DA48F600BE0E15 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = "../../../fmdb 2/src/fmdb/FMDatabaseQueue.h"; sourceTree = "<group>"; };
+		6596F00B24DA495D00BE0E15 /* DatabaseAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		65CCCB4F24D926AE00A15A6E /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
+		65CCCB5124D92A9F00A15A6E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		65FEBBDE24C9E2E500795D13 /* QuanLyCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FEBBE124C9E2E500795D13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65FEBBE324C9E2E500795D13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65FEBBE324C9E2E500795D13 /* FoodDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailController.swift; sourceTree = "<group>"; };
 		65FEBBE624C9E2E500795D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65FEBBE824C9E2ED00795D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65FEBBEB24C9E2EE00795D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65FEBBED24C9E2EE00795D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FEBBF224C9E2EE00795D13 /* QuanLyCafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuanLyCafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +86,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		65FEBBDB24C9E2E500795D13 /* Frameworks */ = {
+		6596EFF024DA487200BE0E15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6596EFF224DA488900BE0E15 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +104,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6596EFD524DA44E400BE0E15 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				6596EFF824DA48F600BE0E15 /* FMDatabase.h */,
+				6596EFFA24DA48F600BE0E15 /* FMDatabase.m */,
+				6596EFF624DA48F600BE0E15 /* FMDatabaseAdditions.h */,
+				6596EFFD24DA48F600BE0E15 /* FMDatabaseAdditions.m */,
+				6596EFF924DA48F600BE0E15 /* FMDatabasePool.h */,
+				6596EFFB24DA48F600BE0E15 /* FMDatabasePool.m */,
+				6596EFFE24DA48F600BE0E15 /* FMDatabaseQueue.h */,
+				6596EFF424DA48F600BE0E15 /* FMDatabaseQueue.m */,
+				6596EFF724DA48F600BE0E15 /* FMDB.h */,
+				6596EFF524DA48F600BE0E15 /* FMResultSet.h */,
+				6596EFFC24DA48F600BE0E15 /* FMResultSet.m */,
+				6596EFF324DA48F500BE0E15 /* QuanLyCafe-Bridging-Header.h */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		6596EFD624DA45B400BE0E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6596EFF124DA488900BE0E15 /* libsqlite3.0.tbd */,
+				6596EFEB24DA45E000BE0E15 /* FMDB.h */,
+				6596EFE724DA45CC00BE0E15 /* FMResultSet.h */,
+				6596EFE824DA45CC00BE0E15 /* FMResultSet.m */,
+				6596EFD824DA45B400BE0E15 /* FMDatabase.h */,
+				6596EFDE24DA45B400BE0E15 /* FMDatabase.m */,
+				6596EFDD24DA45B400BE0E15 /* FMDatabaseAdditions.h */,
+				6596EFDC24DA45B400BE0E15 /* FMDatabaseAdditions.m */,
+				6596EFD724DA45B400BE0E15 /* FMDatabasePool.h */,
+				6596EFDA24DA45B400BE0E15 /* FMDatabasePool.m */,
+				6596EFD924DA45B400BE0E15 /* FMDatabaseQueue.h */,
+				6596EFDB24DA45B400BE0E15 /* FMDatabaseQueue.m */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6596F00A24DA491E00BE0E15 /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				6596F00B24DA495D00BE0E15 /* DatabaseAccess.swift */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
 		65FEBBD524C9E2E500795D13 = {
 			isa = PBXGroup;
 			children = (
+				6596EFED24DA480000BE0E15 /* fmdb */,
 				65FEBBE024C9E2E500795D13 /* QuanLyCafe */,
 				65FEBBF524C9E2EE00795D13 /* QuanLyCafeTests */,
 				65FEBBDF24C9E2E500795D13 /* Products */,
+				6596EFD624DA45B400BE0E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +173,18 @@
 		65FEBBE024C9E2E500795D13 /* QuanLyCafe */ = {
 			isa = PBXGroup;
 			children = (
+				6596F00A24DA491E00BE0E15 /* DAL */,
+				6596EFD524DA44E400BE0E15 /* FMDB */,
 				65FEBBE124C9E2E500795D13 /* AppDelegate.swift */,
-				65FEBBE324C9E2E500795D13 /* ViewController.swift */,
+				65FEBBE324C9E2E500795D13 /* FoodDetailController.swift */,
 				65FEBBE524C9E2E500795D13 /* Main.storyboard */,
-				65FEBBE824C9E2ED00795D13 /* Assets.xcassets */,
+				6552CC6024D7043F0006A7B9 /* Food.swift */,
 				65FEBBEA24C9E2EE00795D13 /* LaunchScreen.storyboard */,
+				65782C0124D93B870088A213 /* Assets.xcassets */,
 				65FEBBED24C9E2EE00795D13 /* Info.plist */,
+				65CCCB4F24D926AE00A15A6E /* FoodTableViewController.swift */,
+				65CCCB5124D92A9F00A15A6E /* FoodTableViewCell.swift */,
+				6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */,
 			);
 			path = QuanLyCafe;
 			sourceTree = "<group>";
@@ -98,14 +200,31 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6596EFEF24DA486C00BE0E15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6596F00224DA48F600BE0E15 /* FMDB.h in Headers */,
+				6596F00124DA48F600BE0E15 /* FMDatabaseAdditions.h in Headers */,
+				6596F00924DA48F600BE0E15 /* FMDatabaseQueue.h in Headers */,
+				6596F00424DA48F600BE0E15 /* FMDatabasePool.h in Headers */,
+				6596F00324DA48F600BE0E15 /* FMDatabase.h in Headers */,
+				6596F00024DA48F600BE0E15 /* FMResultSet.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		65FEBBDD24C9E2E500795D13 /* QuanLyCafe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65FEBBFB24C9E2EE00795D13 /* Build configuration list for PBXNativeTarget "QuanLyCafe" */;
 			buildPhases = (
+				6596EFEF24DA486C00BE0E15 /* Headers */,
 				65FEBBDA24C9E2E500795D13 /* Sources */,
-				65FEBBDB24C9E2E500795D13 /* Frameworks */,
 				65FEBBDC24C9E2E500795D13 /* Resources */,
+				6596EFF024DA487200BE0E15 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +265,7 @@
 				TargetAttributes = {
 					65FEBBDD24C9E2E500795D13 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					65FEBBF124C9E2EE00795D13 = {
 						CreatedOnToolsVersion = 10.3;
@@ -178,7 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FEBBEC24C9E2EE00795D13 /* LaunchScreen.storyboard in Resources */,
-				65FEBBE924C9E2ED00795D13 /* Assets.xcassets in Resources */,
+				6559CEBA24D96CA300FC9E0A /* GoogleService-Info.plist in Resources */,
+				65782C0224D93B870088A213 /* Assets.xcassets in Resources */,
 				65FEBBE724C9E2E500795D13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,8 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FEBBE424C9E2E500795D13 /* ViewController.swift in Sources */,
+				65FEBBE424C9E2E500795D13 /* FoodDetailController.swift in Sources */,
+				65CCCB5024D926AF00A15A6E /* FoodTableViewController.swift in Sources */,
+				6552CC6124D7043F0006A7B9 /* Food.swift in Sources */,
+				6596F00524DA48F600BE0E15 /* FMDatabase.m in Sources */,
+				65CCCB5224D92A9F00A15A6E /* FoodTableViewCell.swift in Sources */,
+				6596F00624DA48F600BE0E15 /* FMDatabasePool.m in Sources */,
+				6596F00724DA48F600BE0E15 /* FMResultSet.m in Sources */,
 				65FEBBE224C9E2E500795D13 /* AppDelegate.swift in Sources */,
+				6596EFFF24DA48F600BE0E15 /* FMDatabaseQueue.m in Sources */,
+				6596F00C24DA495D00BE0E15 /* DatabaseAccess.swift in Sources */,
+				6596F00824DA48F600BE0E15 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +490,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HTDH5XWA79;
 				INFOPLIST_FILE = QuanLyCafe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,6 +500,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = minhnguyen.tdc.QuanLyCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuanLyCafe/FMDB/QuanLyCafe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,7 +511,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HTDH5XWA79;
 				INFOPLIST_FILE = QuanLyCafe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = minhnguyen.tdc.QuanLyCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuanLyCafe/FMDB/QuanLyCafe-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
