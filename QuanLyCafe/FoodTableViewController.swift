@@ -157,12 +157,7 @@ class FoodTableViewController: UITableViewController {
             }
             dao.realFoodList(foods: &foodList)
         }
-        if foodList.count == 0{
-            if let food = Food(name: "Cafe Sua", image: UIImage(named: "defaultImage"), prince: 20000, category: "Cafe"){
-                //Import food into foodList
-                foodList += [food]
-            }
-        }
+        
         
     }
     
@@ -193,17 +188,14 @@ class FoodTableViewController: UITableViewController {
                     if dao.open(){
                         dao.update(oldFood: foodList[selectedIndexPath.row], newFood: updateFood)
                     }
-                    
+    
                     //update to the meal list
                     foodList[selectedIndexPath.row] = updateFood
-                    
                     //update to table view
                     tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+                    
                 }
             }
-        default:
-            print("Unknow the direction!")
-            break
         }
     }
     

@@ -9,8 +9,8 @@
 import UIKit
 
 class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
-
-
+    
+    
     //MARK: Properties
     var food: Food?
     private var dataSource = [String]()
@@ -18,7 +18,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
     //for Database
     let dao = MyDatabaseAccess()
     static var isCreateTable: Bool = false
-
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var edtFoodName: UITextField!
@@ -38,6 +38,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         //uy quyen
         edtFoodName.delegate = self
+        edtFoodCategory.delegate = self
         
         //Get the meal from table view controller
         if let theFood = food{
@@ -56,6 +57,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
     //MARK: Delegation function of TextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         edtFoodName.resignFirstResponder()
+        edtFoodCategory.resignFirstResponder()
         return true
     }
     
@@ -141,41 +143,95 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
             if !FoodTableViewController.isCreateTable{
                 FoodTableViewController.isCreateTable = dao.createTableCategory()
             }
+            dataSource = [""];
             dao.realCategory(categories: &dataSource)
         }
-        if dataSource.count == 0 {
-            dataSource = ["Cafe", "Sinh to"]
-            
-        }
-            
-    }
-    
-    //thiet lap so cot cho picker view
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    //thiet lap so dong cho picker view
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataSource.count
         
     }
     
-    //tra ve dong duoc chon trong picker view
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataSource[row]
-    }
-    
-    //thiet lap su kien picker view
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0{
-            edtFoodCategory.text = dataSource[row]
+    //them loai
+    @IBAction func btnThemLoai(_ sender: Any) {
+        let category = edtFoodCategory.text ?? ""
+        if dao.open(){
+            // hiện hộp thoại xác nhận xoá
+            let acExit = UIAlertController(title: "Xác nhận", message: "Bạn có muốn thêm \(category) vào loại không?", preferredStyle: UIAlertController.Style.alert)
+            // Xử lý trong trường hợp chọn Đồng ý
+            acExit.addAction(UIAlertAction(title: "Đồng ý", style: .default, handler: { (action: UIAlertAction!) in
+                // Viết xử lý tại đây
+                self.dao.insertCategory(category: category)
+                self.loadCategory()
+                self.pkvFoodCategory.reloadAllComponents()
+                
+            }))
+            // Xử lý trong trường hợp chọn Không
+            acExit.addAction(UIAlertAction(title: "Không", style: .default, handler: { (action: UIAlertAction!) in
+                acExit .dismiss(animated: true, completion: nil)
+            }))
+            // Hiển thị hộp thoại
+            present(acExit, animated: true, completion: nil)
         }
     }
+
+
+@IBAction func btnSuaLoai(_ sender: Any) {
     
+}
+
+//xoa loai
+@IBAction func btnXoaLoai(_ sender: Any) {
+    let category = edtFoodCategory.text ?? ""
+    if dao.open(){
+        
+        // hiện hộp thoại xác nhận xoá
+        let acExit = UIAlertController(title: "Xác nhận", message: "Bạn có muốn xoá loại không?", preferredStyle: UIAlertController.Style.alert)
+        // Xử lý trong trường hợp chọn Đồng ý
+        acExit.addAction(UIAlertAction(title: "Đồng ý", style: .default, handler: { (action: UIAlertAction!) in
+            // Viết xử lý tại đây
+            self.dao.deleteCategory(category: category)
+            self.loadCategory()
+            self.pkvFoodCategory.reloadAllComponents()
+            
+        }))
+        // Xử lý trong trường hợp chọn Không
+        acExit.addAction(UIAlertAction(title: "Không", style: .default, handler: { (action: UIAlertAction!) in
+            acExit .dismiss(animated: true, completion: nil)
+        }))
+        // Hiển thị hộp thoại
+        present(acExit, animated: true, completion: nil)
+    }
+}
+
+
+//thiet lap so cot cho picker view
+func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+}
+
+//thiet lap so dong cho picker view
+func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return dataSource.count
     
+}
+
+//tra ve dong duoc chon trong picker view
+func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return dataSource[row]
+}
+
+//thiet lap su kien picker view
+func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    if component == 0{
+        edtFoodCategory.text = dataSource[row]
+        
+    }
     
+    //sua loai
     
+}
+
+
+
+
 
 }
 

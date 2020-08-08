@@ -45,7 +45,8 @@ class MyDatabaseAccess{
                 + MEAL_NAME + " TEXT, "
                 + MEAL_IMAGE + " TEXT, "
                 + MEAL_PRINCE + " INTEGER, "
-                + MEAL_CATEGORY + " TEXT)"
+                + MEAL_CATEGORY + " TEXT, "
+                + "MaLoai" + " REFERENCES Category(MaLoai))"
             
             if db!.executeStatements(sql){
                 ok = true
@@ -172,7 +173,7 @@ class MyDatabaseAccess{
             let newStringImage = newImageData.base64EncodedData(options: .lineLength64Characters)
             //try to query the database
             do {
-                try db!.executeQuery(sql, values: [newFood.name, newStringImage, newFood.prince, newFood.category, oldFood.name, oldFood.category])
+                try db!.executeUpdate(sql, values: [newFood.name, newStringImage, newFood.prince, newFood.category, oldFood.name, oldFood.category])
                 os_log("Successful to update the food")
             }
             catch{
@@ -193,7 +194,7 @@ class MyDatabaseAccess{
         
         if db != nil{
             let sql = "CREATE TABLE " + "Category" + "( "
-                + TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "MaLoai" + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "foodCategory" + " TEXT)"
             
             if db!.executeStatements(sql){
@@ -264,7 +265,7 @@ class MyDatabaseAccess{
             
             //try to query the database
             do {
-                try db!.executeQuery(sql, values: [oldCategory, newCategory])
+                try db!.executeUpdate(sql, values: [oldCategory, newCategory])
                 os_log("Successful to update the category")
             }
             catch{
@@ -280,7 +281,7 @@ class MyDatabaseAccess{
     //delete category
     func deleteCategory(category: String){
         if db != nil {
-            let sql = "DELETE FROM Category WHERE foodCategory = ? AND"
+            let sql = "DELETE FROM Category WHERE foodCategory = ?"
             do{
                 try db!.executeUpdate(sql, values: [category])
                 os_log("The category is deleted!")
