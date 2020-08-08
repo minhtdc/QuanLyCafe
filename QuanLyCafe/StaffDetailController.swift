@@ -109,7 +109,7 @@ class StaffDetailController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
         
         //Preparing for the save button pressed
-        let maNV = edtMaNV.text ?? "" //?? nêu lấy được gán mealName, nếu không lấy đc gán default chuỗi sau ??
+        let maNV = edtMaNV.text ?? "" //?? nêu lấy được gán, nếu không lấy đc gán default chuỗi sau ??
         let tenNV = edtTenNV.text ?? ""
         let sdtNV = edtSdtNV.text ?? ""
         let diaChiNV = edtDiaChiNV.text ?? ""

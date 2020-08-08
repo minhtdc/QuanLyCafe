@@ -16,14 +16,6 @@ class MyDatabaseAccess{
     let DB_NAME: String = "Menu.sqlite"
     let db: FMDatabase?
     
-    //MARK: Table's propertie
-    let TABLE_NAME: String = "foods"
-    let TABLE_ID: String = "_id"
-    let MEAL_NAME: String = "name"
-    let MEAL_IMAGE: String = "image"
-    let MEAL_PRINCE: String = "prince"
-    let MEAL_CATEGORY: String = "category"
-    
     //MARK: Contructor
     init() {
         let directories:[String] = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
@@ -35,6 +27,13 @@ class MyDatabaseAccess{
         else{os_log("Database is created successful!")}
     }
     
+    //MARK: Table Menu properties
+    let TABLE_NAME: String = "foods"
+    let TABLE_ID: String = "_id"
+    let MEAL_NAME: String = "name"
+    let MEAL_IMAGE: String = "image"
+    let MEAL_PRINCE: String = "prince"
+    let MEAL_CATEGORY: String = "category"
     //MARK: Primities Action
     func createTable() -> Bool{
         var ok: Bool = false
@@ -89,7 +88,7 @@ class MyDatabaseAccess{
     }
     
     
-    //MARK: APIs
+    //MARK: TABLE MENU
     func insert(food: Food){
         if db != nil{
             //Transform the meal image to string
@@ -127,7 +126,7 @@ class MyDatabaseAccess{
         }
     }
     
-    //real meal list
+    //read meal list
     func realFoodList(foods:inout [Food]){
         if db != nil {
             var result: FMResultSet?
@@ -186,7 +185,7 @@ class MyDatabaseAccess{
         }
     }
     
-    //CATEGORY
+    //MARK: TABLE CATEGORY
     
     //create tablecategory
     func createTableCategory() -> Bool{
@@ -296,6 +295,138 @@ class MyDatabaseAccess{
         }
     }
     
+    // MARK: TABLE NHAN VIEN
+    //Table Nhan vien properties
+    let TABLE_NHANVIEN: String = "NhanVien"
+    let MA_NV: String = "maNV"
+    let TEN_NV: String = "name"
+    let IMAGE_NV: String = "imageNV"
+    let DIACHI_NV: String = "diaChiNV"
+    let SDT_NV: String = "SdtNV"
+    
+    //Create table Nhan vien
+    func createTableNhanVien() -> Bool{
+        var ok: Bool = false
+        
+        if db != nil{
+            let sql = "CREATE TABLE " + TABLE_NHANVIEN + "( "
+                + MA_NV + " INTEGER PRIMARY KEY, "
+                + TEN_NV + " TEXT, "
+                + IMAGE_NV + " TEXT, "
+                + SDT_NV + " TEXT, "
+                + DIACHI_NV + " TEXT)"
+            
+            if db!.executeStatements(sql){
+                ok = true
+                os_log("Table is created!")
+            }
+            else{
+                os_log("Can not create the table")
+            }
+        }
+        else{
+            os_log("Database is null")
+        }
+        return ok
+    }
+    
+    //Read table nhan vien
+    func readStaffList(staffs:inout [Staff]){
+        if db != nil {
+            var result: FMResultSet?
+            let sql = "SELECT * FROM \(TABLE_NHANVIEN)"
+            //Query
+            do {
+                result = try db!.executeQuery(sql, values: nil)
+            }
+            catch{
+                print("Fail to real data: \(error.localizedDescription)")
+            }
+            
+            //real data from the results
+            if result != nil{
+                while(result?.next())!{
+                    let maNV = result!.string(forColumn: MA_NV) ?? ""
+                    let imageNV = result!.string(forColumn: IMAGE_NV)
+                    let tenNV = result!.string(forColumn: TEN_NV) ?? ""
+                    let diaChiNV = result!.string(forColumn: DIACHI_NV) ?? ""
+                    let SdtNV = result!.string(forColumn: SDT_NV) ?? ""
+                    //transform string image to UIImage
+                    let dataImage: Data = Data(base64Encoded: imageNV!, options: .ignoreUnknownCharacters)!
+                    let staffImage = UIImage(data: dataImage)
+                    //create a meal to contain the values
+                    let staff = Staff(maNV: maNV, tenNV: tenNV, imageNV: staffImage!, SDT: SdtNV, diaChiNV: diaChiNV)
+                    staffs.append(staff!)
+                    
+                }
+            }
+            
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
+    //them nhan vien
+    func insertNhanVien(staff: Staff){
+        if db != nil{
+            //Transform the meal image to string
+            let imageData: NSData = staff.imageNV!.pngData()! as NSData
+            let staffImageString = imageData.base64EncodedData(options: .lineLength64Characters)
+            
+            let sql = "INSERT INTO \(TABLE_NHANVIEN)(\(MA_NV), \(TEN_NV), \(IMAGE_NV), \(SDT_NV), \(DIACHI_NV)) VALUES (?, ?, ?, ?, ?)"
+            
+            if db!.executeUpdate(sql, withArgumentsIn: [staff.maNV, staff.tenNV, staffImageString, staff.SDT, staff.diaChiNV]){
+                os_log("The staff is insert to the database!")
+                
+            }else{
+                os_log("Fail to insert the staff!")
+            }
+            
+        }
+        else{
+            os_log("Database is nil!")
+        }
+    }
+    
+    //Sua nhan vien
+    func updateNhanVien(oldStaff: Staff, newStaff: Staff){
+        if db != nil {
+            let sql = "UPDATE \(TABLE_NHANVIEN) SET \(MA_NV) = ?, \(TEN_NV) = ?, \(IMAGE_NV) = ?, \(SDT_NV) = ? WHERE \(DIACHI_NV) = ? AND \(MA_NV) = ?"
+            //transform image of new meal to string
+            let newImageData: NSData = newStaff.imageNV!.pngData()! as NSData
+            let newStringImage = newImageData.base64EncodedData(options: .lineLength64Characters)
+            //try to query the database
+            do {
+                try db!.executeUpdate(sql, values: [newStaff.maNV, newStaff.tenNV, newStringImage, newStaff.SDT, newStaff.diaChiNV, oldStaff.maNV])
+                os_log("Successful to update the staff")
+            }
+            catch{
+                print("Fail to update data: \(error.localizedDescription)")
+            }
+            
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
+    
+    //Xoa nhan vien
+    func deleteNhanVien(staff: Staff){
+        if db != nil {
+            let sql = "DELETE FROM \(TABLE_NHANVIEN) WHERE \(MA_NV) = ? AND \(TEN_NV) = ?"
+            do{
+                try db!.executeUpdate(sql, values: [staff.maNV, staff.tenNV])
+                os_log("The staff is deleted!")
+                
+            }
+            catch {
+                os_log("Fail to delete the staff")
+            }
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
     
 }
 

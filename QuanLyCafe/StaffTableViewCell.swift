@@ -10,10 +10,14 @@ import UIKit
 
 class StaffTableViewCell: UITableViewCell {
     
+    
+    
     //Mark: Cell properties
+
     @IBOutlet weak var staffImage: UIImageView!
-    @IBOutlet weak var tenNV: UILabel!
-    @IBOutlet weak var maNV: UILabel!
+    @IBOutlet weak var tenNV: UITextField!
+    @IBOutlet weak var maNV: UITextField!
+    
     
 
     override func awakeFromNib() {

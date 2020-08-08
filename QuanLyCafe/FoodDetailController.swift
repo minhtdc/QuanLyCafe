@@ -106,7 +106,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
         //Preparing for the save button pressed
-        let foodName = edtFoodName.text ?? ""; //?? nêu lấy được gán mealName, nếu không lấy đc gán default chuỗi sau ??
+        let foodName = edtFoodName.text ?? ""; //?? nêu lấy được gán, nếu không lấy đc gán default chuỗi sau ??
         let foodPrince = Int(edtFoodPrince.text ?? "")
         let foodCategory = edtFoodCategory.text ?? ""
         food = Food(name: foodName, image: foodImage.image, prince: foodPrince!, category: foodCategory)

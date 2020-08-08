@@ -28,8 +28,6 @@ class FoodTableViewController: UITableViewController {
         //Load the food list
         loadFood()
         
-        //Add the Edit button
-        navigationItem.leftBarButtonItem = editButtonItem
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -197,6 +195,11 @@ class FoodTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -29,7 +29,7 @@ class StaffTableViewController: UITableViewController {
         loadStaff()
         
         //Add the Edit button
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -147,7 +147,7 @@ class StaffTableViewController: UITableViewController {
             if !FoodTableViewController.isCreateTable{
                 FoodTableViewController.isCreateTable = dao.createTable()
             }
-            //
+            dao.readStaffList(staffs: &staffList)
         }
         
     }
@@ -165,7 +165,9 @@ class StaffTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
                 
                 //insert to db
-                
+                if dao.open(){
+                    dao.insertNhanVien(staff: staffNew)
+                }
                 
             }
         case .updateStaff:
@@ -173,7 +175,7 @@ class StaffTableViewController: UITableViewController {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     //update to database
                     if dao.open(){
-                        
+                        dao.updateNhanVien(oldStaff: staffList[selectedIndexPath.row], newStaff: updateStaff)
                     }
                     
                     //update to the meal list
@@ -184,6 +186,10 @@ class StaffTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     
