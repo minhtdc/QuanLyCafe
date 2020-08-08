@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>847337324403-r9ds5jh0s3hpmr9ef5s8mdk5lsg5vcif.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.847337324403-r9ds5jh0s3hpmr9ef5s8mdk5lsg5vcif</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB-r7ZlPazr6R-ym0wKg3qVnPY6B9zCMVA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>847337324403</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>minhnguyen.tdc.QuanLyCafe</string>
+	<key>PROJECT_ID</key>
+	<string>qlcafeios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>qlcafeios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:847337324403:ios:77ece4055851faf797cf06</string>
+	<key>DATABASE_URL</key>
+	<string>https://qlcafeios.firebaseio.com</string>
+</dict>
+</plist>
