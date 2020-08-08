@@ -343,60 +343,31 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-gZ-GX1">
                                 <rect key="frame" x="16" y="356" width="382" height="264"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Hni-8Y-bs6">
-                                        <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="264"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Ma NV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sw-JK-45m">
-                                                <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="27"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" red="1" green="0.01208707165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ten NV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vD-67-ivA">
-                                                <rect key="frame" x="0.0" y="82" width="122.33333333333333" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" red="1" green="0.01208707165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày vào làm " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF3-aE-E5X">
-                                                <rect key="frame" x="0.0" y="161" width="122.33333333333333" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" red="1" green="0.01208707165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvD-zv-XGu">
-                                                <rect key="frame" x="0.0" y="240" width="122.33333333333333" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" red="1" green="0.01208707165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="IzR-5X-xmR">
-                                        <rect key="frame" x="130.33333333333337" y="0.0" width="251.66666666666663" height="264"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="264"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhap Ma NV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-mh-bu6">
-                                                <rect key="frame" x="0.0" y="0.0" width="251.66666666666666" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhap Ten NV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGR-Hc-9Td">
-                                                <rect key="frame" x="0.0" y="78" width="251.66666666666666" height="30"/>
+                                                <rect key="frame" x="0.0" y="78" width="382" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhap Ngay Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCi-Fe-OZq">
-                                                <rect key="frame" x="0.0" y="156" width="251.66666666666666" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhap dia chi nhan vien" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCi-Fe-OZq">
+                                                <rect key="frame" x="0.0" y="156" width="382" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhap SDT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-Db-SGw">
-                                                <rect key="frame" x="0.0" y="234" width="251.66666666666666" height="30"/>
+                                                <rect key="frame" x="0.0" y="234" width="382" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -415,6 +386,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94339433210000001" green="0.82687263200000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UbO-gZ-GX1" firstAttribute="leading" secondItem="cLF-eH-5hJ" secondAttribute="leading" constant="16" id="FGe-w7-RuT"/>
                             <constraint firstItem="CoK-mF-j7M" firstAttribute="top" secondItem="cLF-eH-5hJ" secondAttribute="top" constant="10" id="ZYQ-P5-x9a"/>
@@ -423,23 +395,40 @@
                             <constraint firstItem="UbO-gZ-GX1" firstAttribute="top" secondItem="CoK-mF-j7M" secondAttribute="bottom" constant="18" id="jZK-Ln-6cU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cLF-eH-5hJ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bBi-VC-5rP" appends="YES" id="L8q-Fl-dk7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Nhan Vien" id="Obz-L6-rT5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ibe-uA-uIr" customClass="CancelNhanVien"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="PD2-pA-wQj"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="lsi-ij-R7r">
+                            <connections>
+                                <action selector="btnCanCel:" destination="ohi-hR-c6p" id="rhz-8o-dv4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="PD2-pA-wQj">
+                            <connections>
+                                <segue destination="yX1-c1-4DS" kind="unwind" unwindAction="unwindFromDetailStaffControllerWithSender:" id="8T5-cH-FTn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonSave" destination="PD2-pA-wQj" id="gIV-RU-zUv"/>
+                        <outlet property="edtDiaChiNV" destination="bCi-Fe-OZq" id="X1z-bI-BBt"/>
                         <outlet property="edtMaNV" destination="y9i-mh-bu6" id="HVw-FH-dXZ"/>
-                        <outlet property="edtNgayLamViec" destination="bCi-Fe-OZq" id="OTC-G6-Vac"/>
                         <outlet property="edtSdtNV" destination="NGM-Db-SGw" id="5lx-1u-LOY"/>
                         <outlet property="edtTenNV" destination="OGR-Hc-9Td" id="LN6-Mf-40a"/>
+                        <outlet property="saveButton" destination="PD2-pA-wQj" id="Xic-ey-2BV"/>
                         <outlet property="staffImage" destination="CoK-mF-j7M" id="o6N-mm-Vcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyI-u6-O5i" sceneMemberID="firstResponder"/>
+                <exit id="yX1-c1-4DS" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="bBi-VC-5rP">
+                    <connections>
+                        <action selector="staffImage:" destination="ohi-hR-c6p" id="uTt-5M-MHd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3430.434782608696" y="-233.03571428571428"/>
+            <point key="canvasLocation" x="-3809" y="-52"/>
         </scene>
         <!--List Nhan Vien-->
         <scene sceneID="AtQ-Jz-BW0">
@@ -454,7 +443,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Cho-wU-qjJ" customClass="StaffTableViewCell" customModule="QuanLyCafe" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StaffTableViewCell" rowHeight="130" id="Cho-wU-qjJ" customClass="StaffTableViewCell" customModule="QuanLyCafe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cho-wU-qjJ" id="Gmt-2Q-pY2">
@@ -505,7 +494,7 @@
                                             <outlet property="maNV" destination="GBd-uF-Xyc" id="UzP-Ob-Gb9"/>
                                             <outlet property="staffImage" destination="eRl-bh-2ph" id="G2G-Bw-Kpy"/>
                                             <outlet property="tenNV" destination="hXp-QQ-ExJ" id="qhb-EK-QAc"/>
-                                            <segue destination="ohi-hR-c6p" kind="show" id="OTs-Bk-AHD"/>
+                                            <segue destination="ohi-hR-c6p" kind="show" identifier="updateStaff" id="OTs-Bk-AHD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -518,14 +507,14 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="tOh-ab-FOP" customClass="DeleteNhanvien"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hLX-fb-QVq" customClass="addNhanvien">
                             <connections>
-                                <segue destination="gO6-PU-BWa" kind="presentation" id="SyX-fj-JSv"/>
+                                <segue destination="gO6-PU-BWa" kind="presentation" identifier="addStaff" id="SyX-fj-JSv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Id-vc-qx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1955.072463768116" y="-222.32142857142856"/>
+            <point key="canvasLocation" x="-2158" y="-106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mEY-4k-Omf">
@@ -543,7 +532,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1x-Zw-8lZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2725" y="-233"/>
+            <point key="canvasLocation" x="-2778" y="-795"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Ue-N5-yr4">
@@ -568,7 +557,7 @@
         <image name="defaultImage" width="150" height="112.66666412353516"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0XZ-MP-MLI"/>
-        <segue reference="Gr5-4H-7ch"/>
+        <segue reference="OTs-Bk-AHD"/>
+        <segue reference="buF-mz-bxi"/>
     </inferredMetricsTieBreakers>
 </document>
