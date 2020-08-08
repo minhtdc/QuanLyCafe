@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6552CC6124D7043F0006A7B9 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552CC6024D7043F0006A7B9 /* Food.swift */; };
+		6557EA7A24DEBC07001B2C12 /* StaffDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557EA7924DEBC07001B2C12 /* StaffDetailController.swift */; };
+		6557EA7C24DEBC20001B2C12 /* StaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557EA7B24DEBC20001B2C12 /* StaffTableViewController.swift */; };
+		6557EA7E24DEBC31001B2C12 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557EA7D24DEBC31001B2C12 /* StaffTableViewCell.swift */; };
+		6557EA8024DEBD77001B2C12 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557EA7F24DEBD77001B2C12 /* Staff.swift */; };
 		6559CEBA24D96CA300FC9E0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */; };
 		65782C0224D93B870088A213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65782C0124D93B870088A213 /* Assets.xcassets */; };
 		6596EFF224DA488900BE0E15 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6596EFF124DA488900BE0E15 /* libsqlite3.0.tbd */; };
@@ -44,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		6552CC6024D7043F0006A7B9 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		6557EA7924DEBC07001B2C12 /* StaffDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailController.swift; sourceTree = "<group>"; };
+		6557EA7B24DEBC20001B2C12 /* StaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewController.swift; sourceTree = "<group>"; };
+		6557EA7D24DEBC31001B2C12 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
+		6557EA7F24DEBD77001B2C12 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65782C0124D93B870088A213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		6596EFD724DA45B400BE0E15 /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../fmdb/src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
@@ -176,14 +184,18 @@
 				6596F00A24DA491E00BE0E15 /* DAL */,
 				6596EFD524DA44E400BE0E15 /* FMDB */,
 				65FEBBE124C9E2E500795D13 /* AppDelegate.swift */,
-				65FEBBE324C9E2E500795D13 /* FoodDetailController.swift */,
-				65FEBBE524C9E2E500795D13 /* Main.storyboard */,
 				6552CC6024D7043F0006A7B9 /* Food.swift */,
+				65FEBBE324C9E2E500795D13 /* FoodDetailController.swift */,
+				65CCCB4F24D926AE00A15A6E /* FoodTableViewController.swift */,
+				65CCCB5124D92A9F00A15A6E /* FoodTableViewCell.swift */,
+				6557EA7F24DEBD77001B2C12 /* Staff.swift */,
+				6557EA7924DEBC07001B2C12 /* StaffDetailController.swift */,
+				6557EA7B24DEBC20001B2C12 /* StaffTableViewController.swift */,
+				6557EA7D24DEBC31001B2C12 /* StaffTableViewCell.swift */,
+				65FEBBE524C9E2E500795D13 /* Main.storyboard */,
 				65FEBBEA24C9E2EE00795D13 /* LaunchScreen.storyboard */,
 				65782C0124D93B870088A213 /* Assets.xcassets */,
 				65FEBBED24C9E2EE00795D13 /* Info.plist */,
-				65CCCB4F24D926AE00A15A6E /* FoodTableViewController.swift */,
-				65CCCB5124D92A9F00A15A6E /* FoodTableViewCell.swift */,
 				6559CEB924D96CA300FC9E0A /* GoogleService-Info.plist */,
 			);
 			path = QuanLyCafe;
@@ -318,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6557EA8024DEBD77001B2C12 /* Staff.swift in Sources */,
 				65FEBBE424C9E2E500795D13 /* FoodDetailController.swift in Sources */,
 				65CCCB5024D926AF00A15A6E /* FoodTableViewController.swift in Sources */,
 				6552CC6124D7043F0006A7B9 /* Food.swift in Sources */,
@@ -325,9 +338,12 @@
 				65CCCB5224D92A9F00A15A6E /* FoodTableViewCell.swift in Sources */,
 				6596F00624DA48F600BE0E15 /* FMDatabasePool.m in Sources */,
 				6596F00724DA48F600BE0E15 /* FMResultSet.m in Sources */,
+				6557EA7A24DEBC07001B2C12 /* StaffDetailController.swift in Sources */,
 				65FEBBE224C9E2E500795D13 /* AppDelegate.swift in Sources */,
 				6596EFFF24DA48F600BE0E15 /* FMDatabaseQueue.m in Sources */,
 				6596F00C24DA495D00BE0E15 /* DatabaseAccess.swift in Sources */,
+				6557EA7C24DEBC20001B2C12 /* StaffTableViewController.swift in Sources */,
+				6557EA7E24DEBC31001B2C12 /* StaffTableViewCell.swift in Sources */,
 				6596F00824DA48F600BE0E15 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
