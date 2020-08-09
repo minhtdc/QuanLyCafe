@@ -461,10 +461,10 @@
             </objects>
             <point key="canvasLocation" x="2822" y="569"/>
         </scene>
-        <!--View Controller-->
+        <!--Sells View Controller-->
         <scene sceneID="CCx-O2-kCT">
             <objects>
-                <viewController id="UoV-qm-PSB" sceneMemberID="viewController">
+                <viewController id="UoV-qm-PSB" customClass="SellsViewController" customModule="QuanLyCafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ln-eh-jfs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,6 +474,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="z4O-N4-oOv"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="UoV-qm-PSB" id="Uwd-w7-OeF"/>
+                                    <outlet property="delegate" destination="UoV-qm-PSB" id="vNZ-mp-Wi3"/>
+                                </connections>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zyz-iS-DMU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="40"/>
@@ -502,6 +506,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Thêm"/>
+                                <connections>
+                                    <action selector="btnThem:" destination="UoV-qm-PSB" eventType="touchUpInside" id="ebC-Ne-pe5"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-Xy-pPX">
                                 <rect key="frame" x="0.0" y="422" width="414" height="260"/>
@@ -510,13 +517,41 @@
                                     <constraint firstAttribute="height" constant="260" id="Bxe-9S-Ucg"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="R7g-xW-ahD">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SellsCell" rowHeight="60" id="R7g-xW-ahD" customClass="SellTableViewCell" customModule="QuanLyCafe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R7g-xW-ahD" id="j9z-vE-aDd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Em-tK-4i9">
+                                                    <rect key="frame" x="20" y="14" width="121" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KXk-rj-onm">
+                                                    <rect key="frame" x="323" y="14" width="71" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUr-Zu-fo2">
+                                                    <rect key="frame" x="159" y="14" width="131" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodName" destination="7Em-tK-4i9" id="nF2-sY-0Gj"/>
+                                            <outlet property="foodPrince" destination="VUr-Zu-fo2" id="uMG-LD-Gbg"/>
+                                            <outlet property="soLuong" destination="KXk-rj-onm" id="pGd-87-iSh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -527,7 +562,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tôngr tiền" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEN-yq-XH0">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tổng tiền" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEN-yq-XH0">
                                 <rect key="frame" x="20" y="783" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -553,14 +588,19 @@
                         <viewLayoutGuide key="safeArea" id="Htq-2x-iwc"/>
                     </view>
                     <navigationItem key="navigationItem" id="h9d-LU-lFR">
-                        <barButtonItem key="rightBarButtonItem" title="Thanh toán" style="plain" id="82y-YE-HBz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="82y-YE-HBz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iW3-DB-JZq">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Thanh toán"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="SellsTableView" destination="7VB-Xy-pPX" id="fWN-DN-8EC"/>
+                        <outlet property="pkvSell" destination="vHJ-xA-Anh" id="fJd-0L-cWa"/>
+                        <outlet property="txtTongTien" destination="VNM-b4-wLn" id="kk8-CT-Mzt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CkG-5a-h8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
