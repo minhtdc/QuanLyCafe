@@ -152,7 +152,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBAction func btnThemLoai(_ sender: Any) {
         let category = edtFoodCategory.text ?? ""
         if dao.open(){
-            // hiện hộp thoại xác nhận xoá
+            // hiện hộp thoại xác nhận
             let acExit = UIAlertController(title: "Xác nhận", message: "Bạn có muốn thêm \(category) vào loại không?", preferredStyle: UIAlertController.Style.alert)
             // Xử lý trong trường hợp chọn Đồng ý
             acExit.addAction(UIAlertAction(title: "Đồng ý", style: .default, handler: { (action: UIAlertAction!) in

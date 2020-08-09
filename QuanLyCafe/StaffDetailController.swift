@@ -44,6 +44,7 @@ class StaffDetailController: UIViewController, UITextFieldDelegate, UIImagePicke
         //Get the meal from table view controller
         if let theStaff = staff{
             navigationItem.title = theStaff.tenNV
+            edtMaNV.text = theStaff.maNV
             edtTenNV.text = theStaff.tenNV
             staffImage.image = theStaff.imageNV
             edtSdtNV.text = theStaff.SDT

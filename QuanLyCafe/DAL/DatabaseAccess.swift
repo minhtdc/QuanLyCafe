@@ -72,8 +72,7 @@ class MyDatabaseAccess{
                 + MEAL_NAME + " TEXT, "
                 + MEAL_IMAGE + " TEXT, "
                 + MEAL_PRINCE + " INTEGER, "
-                + MEAL_CATEGORY + " TEXT, "
-                + "MaLoai" + " REFERENCES Category(MaLoai))"
+                + MEAL_CATEGORY + " TEXT)"
             
             if db!.executeStatements(sql){
                 ok = true
@@ -192,9 +191,7 @@ class MyDatabaseAccess{
         var ok: Bool = false
         
         if db != nil{
-            let sql = "CREATE TABLE " + "Category" + "( "
-                + "MaLoai" + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "foodCategory" + " TEXT)"
+            let sql = "CREATE TABLE Category(foodCategory TEXT)"
             
             if db!.executeStatements(sql){
                 ok = true
@@ -427,6 +424,95 @@ class MyDatabaseAccess{
             os_log("Database is nil")
         }
     }
+    
+    //MARK: TABLE
+    
+    //create table
+    func createTableBan() -> Bool{
+        var ok: Bool = false
+        
+        if db != nil{
+            let sql = "CREATE TABLE Ban(soBan TEXT)"
+            
+            if db!.executeStatements(sql){
+                ok = true
+                os_log("Table is created!")
+            }
+            else{
+                os_log("Can not create table")
+            }
+        }
+        else{
+            os_log("Database is null")
+        }
+        return ok
+    }
+    
+    //read table list
+    func readBan(Table:inout [String]){
+        if db != nil {
+            var result: FMResultSet?
+            let sql = "SELECT * FROM Ban"
+            //Query
+            do {
+                result = try db!.executeQuery(sql, values: nil)
+            }
+            catch{
+                print("Fail to real table: \(error.localizedDescription)")
+            }
+            
+            //read data from the results
+            if result != nil{
+                while(result?.next())!{
+                    let soBan = result!.string(forColumn: "soBan") ?? ""
+                    Table.append(soBan)
+                    
+                }
+            }
+            
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
+    
+    //add table
+    func addTable(Table: String){
+        if db != nil{
+            
+            let sql = "INSERT INTO Ban(soBan) VALUES (?)"
+            
+            if db!.executeUpdate(sql, withArgumentsIn: [Table]){
+                os_log("The table is insert to the database!")
+                
+            }else{
+                os_log("Fail to insert the table!")
+            }
+            
+        }
+        else{
+            os_log("Database is nil!")
+        }
+    }
+    
+    //delete table
+    func deleteTable(Table: String){
+        if db != nil {
+            let sql = "DELETE FROM Ban WHERE soBan = ?"
+            do{
+                try db!.executeUpdate(sql, values: [Table])
+                os_log("The table is deleted!")
+                
+            }
+            catch {
+                os_log("Fail to delete the table")
+            }
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
+    
     
 }
 
