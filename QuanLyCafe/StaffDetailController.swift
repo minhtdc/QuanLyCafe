@@ -17,9 +17,8 @@ class StaffDetailController: UIViewController, UITextFieldDelegate, UIImagePicke
     let dao = MyDatabaseAccess()
     static var isCreateTable: Bool = false
     
-
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var staffImage: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var edtMaNV: UITextField!
     @IBOutlet weak var edtTenNV: UITextField!
     @IBOutlet weak var edtDiaChiNV: UITextField!
@@ -75,7 +74,7 @@ class StaffDetailController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     //MARK: actions
     //tap ton picture
-    @IBAction func staffImage(_ sender: UITapGestureRecognizer) {
+    @IBAction func tapOnPictureAction(_ sender: Any) {
         //hide the keyboard
         edtMaNV.resignFirstResponder()
         //create object of ImagePickerController

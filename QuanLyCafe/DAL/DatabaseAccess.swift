@@ -13,7 +13,7 @@ import os.log
 class MyDatabaseAccess{
     //MARK: Properties
     let dPath: String
-    let DB_NAME: String = "Menu.sqlite"
+    let DB_NAME: String = "QLCafe.sqlite"
     let db: FMDatabase?
     
     //MARK: Contructor
@@ -25,40 +25,6 @@ class MyDatabaseAccess{
             os_log("Can not create the database. Please review the Path!")
         }
         else{os_log("Database is created successful!")}
-    }
-    
-    //MARK: Table Menu properties
-    let TABLE_NAME: String = "foods"
-    let TABLE_ID: String = "_id"
-    let MEAL_NAME: String = "name"
-    let MEAL_IMAGE: String = "image"
-    let MEAL_PRINCE: String = "prince"
-    let MEAL_CATEGORY: String = "category"
-    //MARK: Primities Action
-    func createTable() -> Bool{
-        var ok: Bool = false
-        
-        if db != nil{
-            let sql = "CREATE TABLE " + TABLE_NAME + "( "
-                + TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + MEAL_NAME + " TEXT, "
-                + MEAL_IMAGE + " TEXT, "
-                + MEAL_PRINCE + " INTEGER, "
-                + MEAL_CATEGORY + " TEXT, "
-                + "MaLoai" + " REFERENCES Category(MaLoai))"
-            
-            if db!.executeStatements(sql){
-                ok = true
-                os_log("Table is created!")
-            }
-            else{
-                os_log("Can not create the table")
-            }
-        }
-        else{
-            os_log("Database is null")
-        }
-        return ok
     }
     
     //Open data
@@ -89,45 +55,42 @@ class MyDatabaseAccess{
     
     
     //MARK: TABLE MENU
-    func insert(food: Food){
+    //Table Menu properties
+    let TABLE_NAME: String = "menu"
+    let TABLE_ID: String = "_id"
+    let MEAL_NAME: String = "name"
+    let MEAL_IMAGE: String = "image"
+    let MEAL_PRINCE: String = "prince"
+    let MEAL_CATEGORY: String = "category"
+    //Creata table Menu
+    func createTableFood() -> Bool{
+        var ok: Bool = false
+        
         if db != nil{
-            //Transform the meal image to string
-            let imageData: NSData = food.image!.pngData()! as NSData
-            let mealImageString = imageData.base64EncodedData(options: .lineLength64Characters)
+            let sql = "CREATE TABLE " + TABLE_NAME + "( "
+                + TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + MEAL_NAME + " TEXT, "
+                + MEAL_IMAGE + " TEXT, "
+                + MEAL_PRINCE + " INTEGER, "
+                + MEAL_CATEGORY + " TEXT, "
+                + "MaLoai" + " REFERENCES Category(MaLoai))"
             
-            let sql = "INSERT INTO " + TABLE_NAME + "(" + MEAL_NAME + ", " + MEAL_IMAGE + ", " + MEAL_PRINCE + "," + MEAL_CATEGORY + ")" + " VALUES (?, ?, ?, ?)"
-            
-            if db!.executeUpdate(sql, withArgumentsIn: [food.name, mealImageString, food.prince, food.category]){
-                os_log("The food is insert to the database!")
-                
-            }else{
-                os_log("Fail to insert the meal!")
+            if db!.executeStatements(sql){
+                ok = true
+                os_log("Table is created!")
             }
-            
-        }
-        else{
-            os_log("Database is nil!")
-        }
-    }
-    func delete(food: Food){
-        if db != nil {
-            let sql = "DELETE FROM \(TABLE_NAME) WHERE \(MEAL_NAME) = ? AND \(MEAL_CATEGORY) = ?"
-            do{
-                try db!.executeUpdate(sql, values: [food.name, food.category])
-                os_log("The food is deleted!")
-                
-            }
-            catch {
-                os_log("Fail to delete the food")
+            else{
+                os_log("Can not create the table")
             }
         }
         else{
-            os_log("Database is nil")
+            os_log("Database is null")
         }
+        return ok
     }
     
     //read meal list
-    func realFoodList(foods:inout [Food]){
+    func readFoodList(foods:inout [Food]){
         if db != nil {
             var result: FMResultSet?
             let sql = "SELECT * FROM \(TABLE_NAME)"
@@ -162,9 +125,46 @@ class MyDatabaseAccess{
         }
     }
     
+    //them mon
+    func insertFood(food: Food){
+        if db != nil{
+            //Transform the meal image to string
+            let imageData: NSData = food.image!.pngData()! as NSData
+            let mealImageString = imageData.base64EncodedData(options: .lineLength64Characters)
+            
+            let sql = "INSERT INTO " + TABLE_NAME + "(" + MEAL_NAME + ", " + MEAL_IMAGE + ", " + MEAL_PRINCE + "," + MEAL_CATEGORY + ")" + " VALUES (?, ?, ?, ?)"
+            
+            if db!.executeUpdate(sql, withArgumentsIn: [food.name, mealImageString, food.prince, food.category]){
+                os_log("The food is insert to the database!")
+                
+            }else{
+                os_log("Fail to insert the meal!")
+            }
+            
+        }
+        else{
+            os_log("Database is nil!")
+        }
+    }
+    func deleteFood(food: Food){
+        if db != nil {
+            let sql = "DELETE FROM \(TABLE_NAME) WHERE \(MEAL_NAME) = ? AND \(MEAL_CATEGORY) = ?"
+            do{
+                try db!.executeUpdate(sql, values: [food.name, food.category])
+                os_log("The food is deleted!")
+                
+            }
+            catch {
+                os_log("Fail to delete the food")
+            }
+        }
+        else{
+            os_log("Database is nil")
+        }
+    }
     
-    //update
-    func update(oldFood: Food, newFood: Food){
+    //update món
+    func updateFood(oldFood: Food, newFood: Food){
         if db != nil {
             let sql = "UPDATE \(TABLE_NAME) SET \(MEAL_NAME) = ?, \(MEAL_IMAGE) = ?, \(MEAL_PRINCE) = ?, \(MEAL_CATEGORY) = ? WHERE \(MEAL_NAME) = ? AND \(MEAL_CATEGORY) = ?"
             //transform image of new meal to string
@@ -210,8 +210,8 @@ class MyDatabaseAccess{
         return ok
     }
     
-    //real category list
-    func realCategory(categories:inout [String]){
+    //read category list
+    func readCategory(categories:inout [String]){
         if db != nil {
             var result: FMResultSet?
             let sql = "SELECT * FROM Category"
@@ -310,7 +310,7 @@ class MyDatabaseAccess{
         
         if db != nil{
             let sql = "CREATE TABLE " + TABLE_NHANVIEN + "( "
-                + MA_NV + " INTEGER PRIMARY KEY, "
+                + MA_NV + " TEXT PRIMARY KEY, "
                 + TEN_NV + " TEXT, "
                 + IMAGE_NV + " TEXT, "
                 + SDT_NV + " TEXT, "

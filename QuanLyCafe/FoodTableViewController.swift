@@ -79,7 +79,7 @@ class FoodTableViewController: UITableViewController {
         if editingStyle == .delete {
             //delete from db
             if dao.open(){
-                dao.delete(food: foodList[indexPath.row])
+                dao.deleteFood(food: foodList[indexPath.row])
             }
             
             // Delete the row from the data source
@@ -151,9 +151,9 @@ class FoodTableViewController: UITableViewController {
     func loadFood(){
         if dao.open(){
             if !FoodTableViewController.isCreateTable{
-                FoodTableViewController.isCreateTable = dao.createTable()
+                FoodTableViewController.isCreateTable = dao.createTableFood()
             }
-            dao.realFoodList(foods: &foodList)
+            dao.readFoodList(foods: &foodList)
         }
         
         
@@ -175,7 +175,7 @@ class FoodTableViewController: UITableViewController {
                 
                 //insert to db
                 if dao.open(){
-                    dao.insert(food: foodNew)
+                    dao.insertFood(food: foodNew)
                 }
                 
             }
@@ -184,7 +184,7 @@ class FoodTableViewController: UITableViewController {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     //update to database
                     if dao.open(){
-                        dao.update(oldFood: foodList[selectedIndexPath.row], newFood: updateFood)
+                        dao.updateFood(oldFood: foodList[selectedIndexPath.row], newFood: updateFood)
                     }
     
                     //update to the meal list

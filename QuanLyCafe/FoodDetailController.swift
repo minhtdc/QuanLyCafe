@@ -143,7 +143,7 @@ class FoodDetailController: UIViewController, UITextFieldDelegate, UIImagePicker
                 FoodTableViewController.isCreateTable = dao.createTableCategory()
             }
             dataSource = [""];
-            dao.realCategory(categories: &dataSource)
+            dao.readCategory(categories: &dataSource)
         }
         
     }

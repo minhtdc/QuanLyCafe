@@ -28,8 +28,6 @@ class StaffTableViewController: UITableViewController {
         //Load the food list
         loadStaff()
         
-        //Add the Edit button
-        //navigationItem.leftBarButtonItem = editButtonItem
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -78,7 +76,12 @@ class StaffTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            //delete from db
+            if dao.open(){
+                dao.deleteNhanVien(staff: staffList[indexPath.row])
+            }
             // Delete the row from the data source
+            staffList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -124,7 +127,7 @@ class StaffTableViewController: UITableViewController {
             //Mark to the destination
             destinationController.navigationDirection = .updateStaff
             //get the seleted cell
-            guard let selectedCell = sender as? FoodTableViewCell else{
+            guard let selectedCell = sender as? StaffTableViewCell else{
                 print("Cannot get the selected cell")
                 return
             }
@@ -144,8 +147,8 @@ class StaffTableViewController: UITableViewController {
     //MARK: Initiatio of data source
     func loadStaff(){
         if dao.open(){
-            if !FoodTableViewController.isCreateTable{
-                FoodTableViewController.isCreateTable = dao.createTable()
+            if !StaffTableViewController.isCreateTable{
+                StaffTableViewController.isCreateTable = dao.createTableNhanVien()
             }
             dao.readStaffList(staffs: &staffList)
         }
